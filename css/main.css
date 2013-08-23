@@ -93,26 +93,15 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-#c {
-    border: 1px solid #ddd;
-    /*background: white;*/
-    background: url(../img/bg3.jpg) left top no-repeat;
-    background-size: 100% 100%;
+body {
+    overflow: hidden;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+#c {
+    border: 1px solid #ddd;
+    background: url(../img/winter.jpg) left top no-repeat;
+    background-size: 100% 100%;
+}
 
 /* ==========================================================================
    Helper classes
