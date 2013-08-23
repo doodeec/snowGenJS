@@ -95,7 +95,9 @@ textarea {
 
 #c {
     border: 1px solid #ddd;
-    background: white;
+    /*background: white;*/
+    background: url(../img/bg3.jpg) left top no-repeat;
+    background-size: 100% 100%;
 }
 
 

@@ -3,15 +3,18 @@ $(document).ready(function (){
     var canvas = document.getElementById('c'),
         context = canvas.getContext('2d'),
         doc = $(document),
-        color = { r: 0, g: 0, b: 0 },
+        color = { r: 255, g: 255, b: 255 },
         points = [],
-        sizeX = canvas.width,
-        sizeY = canvas.height,
+        sizeX = 0,
+        sizeY = 0,
         gravity = 0.4;
 
     //set canvas width/height properties to fill document
     canvas.width = doc.width();
     canvas.height = doc.height();
+
+    sizeX = canvas.width;
+    sizeY = canvas.height;
 
 
     window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
