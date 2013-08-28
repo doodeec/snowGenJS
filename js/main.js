@@ -7,7 +7,8 @@ $(document).ready(function (){
         points = [],
         sizeX = 0,
         sizeY = 0,
-        gravity = 0.4;
+        gravity = 0.4,
+        pastTime = null;
 
     //set canvas width/height properties to fill document
     canvas.width = doc.width();
@@ -25,7 +26,7 @@ $(document).ready(function (){
         this.y = y;
         this.distance = distance;
         this.radius = 3*distance;
-        this.velocity = distance*(1+Math.random());
+        this.velocity = distance*(0.5+Math.random())*(0.5+Math.random())*(0.5+Math.random());
 
         this.opacity = 1 - this.distance/10;
 
@@ -54,10 +55,12 @@ $(document).ready(function (){
 
         for (var j= 0, length = points.length; j < length; j++) {
             var point = points[j];
+            var distance;
+            distance = pastTime ? point.velocity*gravity*(data - pastTime)/10 : point.velocity*gravity;
 
-            if (point.y + point.velocity < sizeY + 20) {
+            if (point.y + distance < sizeY + 20) {
                 point.draw();
-                point.y += point.velocity*gravity;
+                point.y += distance;
                 pointsArray.push(point);
             } else {
                 var p = new Point(Math.random()*sizeX, -20, point.distance);
@@ -65,6 +68,7 @@ $(document).ready(function (){
             }
         }
 
+        pastTime = data;
         points = pointsArray;
 
         requestAnimationFrame(loop);
