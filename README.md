@@ -6,7 +6,7 @@ Adds falling snowflakes into the canvas. Image can be used as canvas background 
 
 ## Version
 
-Version 0.1.2
+Version 0.1.3
 
 ## Author
 
